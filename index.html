@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Clicker</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+    }
+
+    .game {
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    #coins {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 25px 0;
+    }
+
+    #clickButton {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: none;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      background: #f59e0b;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: 0.1s;
+    }
+
+    #clickButton:active {
+      transform: scale(0.92);
+    }
+
+    #message {
+      margin-top: 25px;
+      font-size: 18px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="game">
+    <h1>🪙 COIN CLICKER</h1>
+
+    <div id="coins">0</div>
+
+    <button id="clickButton">KLICKEN!</button>
+
+    <div id="message">
+      Jeder Klick = +1 Coin
+    </div>
+  </div>
+
+  <script>
+    let coins = 0;
+
+    const coinsDisplay = document.getElementById("coins");
+    const clickButton = document.getElementById("clickButton");
+
+    clickButton.addEventListener("click", function() {
+      coins++;
+      coinsDisplay.textContent = coins;
+    });
+  </script>
+
+</body>
+</html>
